@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
 @Builder
 public class ResultRepo {
     private String repositoryName;
@@ -16,7 +15,6 @@ public class ResultRepo {
     private List<Branch> branches;
 
     @Data
-    @AllArgsConstructor
     @Builder
     public static class Branch{
         private String name;

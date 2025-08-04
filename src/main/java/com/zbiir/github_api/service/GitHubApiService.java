@@ -5,6 +5,7 @@ import com.zbiir.github_api.model.BranchInfo;
 import com.zbiir.github_api.model.GitHubRepo;
 import com.zbiir.github_api.model.ResultRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -21,10 +22,14 @@ public class GitHubApiService {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Value("${github.api.url}")
+    private String apiUrl;
+
+
     public List<ResultRepo> getRepositories(String username) {
 
-        String reposUrl = "https://api.github.com/users/{username}/repos";
-        String branchesUrl = "https://api.github.com/repos/{username}/{repos}/branches";
+        String reposUrl = apiUrl + "/users/{username}/repos";
+        String branchesUrl = apiUrl + "/repos/{username}/{repos}/branches";
 
         GitHubRepo[] gitHubRepos;
         try {
