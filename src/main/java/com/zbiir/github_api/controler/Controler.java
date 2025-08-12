@@ -19,7 +19,7 @@ public class Controler {
     private GitHubApiService gitHubApiService;
 
     @GetMapping ("/repos/{username}")
-    public List<ResultRepo> test(@PathVariable String username){
+    public List<ResultRepo> getRepositoriesResult(@PathVariable String username){
     return gitHubApiService.getRepositories(username);
 }
 

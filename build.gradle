@@ -39,6 +39,7 @@ dependencies {
 
 	testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-stub-runner'
 	testImplementation 'org.springframework.cloud:spring-cloud-contract-wiremock'
+	testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
 }
 
 tasks.named('test') {
